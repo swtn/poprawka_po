@@ -1,3 +1,4 @@
+//na razie zaczęte, dokończę kiedyś XD
 #include <stdio.h>
 
 
