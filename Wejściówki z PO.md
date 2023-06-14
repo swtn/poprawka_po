@@ -1,4 +1,5 @@
 LAB02
+
 Napisz program szyfrujący tekst wprowadzany przez użytkownika. W tym celu przygotuj tablicę dwuwymiarową A o wymiarze 5 na 5 przechowującą wartości typu `char`, oraz tablicę jednowymiarową B, przechowującą wskaźniki do zmiennych typu `char`. Do tablicy B wpisz wartości `NULL`, a do tablicy A wpisz litery alfabetu (z pominięciem liter zawierających znaki diakrytyczne: ą, ć, ę, ł, ń, ó, ś, ź, ż).
 Następnie wczytaj od użytkownika ciąg znaków bez spacji, reprezentujący dowolny napis składający się tylko ze znaków z tablicy A, którego długość nie jest większa niż długość tablicy jednowymiarowej B. Zakładamy przy tym, że dane wprowadzane przez użytkownika są zawsze poprawne co do ich wartości i rozmiaru. Napis wczytaj poleceniem `scanf` do pomocniczej tablicy. Następnie dla każdej kolejnej litery wczytanego napisu znajdź w tablicy A komórkę, przechowującą tę literę, po czym adres znalezionej komórki w A zapisz w kolejnej komórce tablicy B. Po zakończeniu tablica B powinna zawierać wskaźniki do odpowiednich komórek tablicy A z kolejnymi literami wprowadzonego napisu. Jeżeli długość tablicy B jest większa niż długość wczytanego słowa, pozostałe komórki tablicy B przechowują wartość `NULL`.
 
@@ -10,6 +11,7 @@ Po przestawieniu wierszy ponownie wypisz w oknie konsoli napis korzystając ze w
 Na koniec przywróć w tablicy właściwy porządek wierszy i jeszcze raz korzystając z tablicy B wypisz napis, tym razem w postaci odszyfrowanej.
 
 LAB03
+
 Zadeklaruj strukturalny typ danych, który będzie zawierał dwa pola: napis oraz liczba całkowita. W funkcji `main` zadeklaruj lokalną tablicę o niewielkiej długości (np. 5), zawierającą elementy typu takiego, jak zdefiniowana wcześniej struktura.
 
 Następnie napisz funkcję, która jako argument wywołania przyjmuje tę tablicę. Kod funkcji sprawdza, czy w każdej z komórek tablicy pole liczbowe nie zawiera wartości mniejszej (ale dodatniej) od długości napisu przechowywanego w drugim polu. Jeżeli tak, skraca napis do długości takiej, jak wartość w polu liczbowym. W przeciwnym przypadku pozostawia napis niezmieniony. Takie sprawdzenie i skracanie wykonuje się dla wszystkich komórek tablicy. Po przejrzeniu całej tablicy funkcja zwraca liczbę skróceń, jakie rzeczywiście zostały wykonane.
@@ -17,6 +19,7 @@ Następnie napisz funkcję, która jako argument wywołania przyjmuje tę tablic
 Napisz w funkcji `main` kod, który pozwala użytkownikowi wprowadzić wartości do obydwu pól w każdej z komórek tej tablicy. W `main`, poniżej kodu wprowadzającego dane umieść wywołanie funkcji skracającej napisy w tablicy, przy czym argumentem wywołania jest tablica, do której dane zostały właśnie przez użytkownika wprowadzone. Na koniec dopisz kod wyświetlający nową zawartość tablicy (w kolejnych wierszach pary: liczba i napis) oraz zwróconą przez funkcję liczbę faktycznie wykonanych skróceń.
 
 LAB04
+
 Napisz program, który będzie wczytywał dane z jednego pliku tekstowego i zmienione zapisywał do drugiego. W tym celu:
 
 1.  Zadeklaruj strukturalny typ danych `struct para` zdefiniowany tak, że zmienna takiego typu może przechowywać dwie wartości: napis oraz liczbę. W funkcji `main` zadeklaruj lokalną tablicę o długości 5, zawierającą elementy typu `struct para`.
@@ -30,6 +33,7 @@ Napisz program, który będzie wczytywał dane z jednego pliku tekstowego i zmie
 Do obsługi plików wykorzystaj funkcje: `fopen`, `fclose`, `fprintf`, `fscanf` i `feof`. Wszystkie z biblioteki: `stdio.h`.
 
 LAB05
+
 Napisz funkcję `bin2int`, która jako argument przyjmuje wskaźnik do tablicy znaków (np. `char* t`) przechowującej liczbę zapisaną w postaci binarnej w taki sposób, że pierwszym znakiem musi być zawsze '1′, tj. np. `1001`, `100`, `10101111`, `1110010`, itp., i która zwróci wartość typu `int` odpowiadającą podanej liczbie binarnej (np. dla `1001` będzie to wartość `9`).
 
 Następnie napisz program, który:
@@ -40,6 +44,7 @@ Następnie napisz program, który:
 4.  Po zakończeniu przestawiania jeszcze raz wypisze w oknie konsoli wartości liczbowe dla wszystkich ciągów binarnych w tablicy ułożonych wg nowego porządku korzystając z funkcji `bin2int`.
 
 LAB06
+
 Przeprowadzono pomiary temperatury w terenie za pomocą czterech czujników temperatury w okresie od 10 lutego do 12 marca. Pomiary były wykonywane przez każdy z czujników co około 5 min. Mierzone wartości zostały zapisane w pliku ( [[do pobrania]](https://ktrojanowski.blog.uksw.edu.pl/files/edu/temp-na-zewn.txt "temp-na-zewn.txt") – _aby zapisać plik na dysk lokalny użyj prawego przycisku myszki i wybierz opcję „Zapisz element docelowy jako..” lub „zapisz link jako..”_). Plik zawiera listę rekordów, gdzie rekord to kolekcja kilku dowolnych wartości, każda ściśle określonego typu, występujących w ustalonej, zawsze tej samej kolejności (zobacz też [Wikipedia](https://pl.wikipedia.org/wiki/Rekord_(informatyka))). Każdy rekord w pliku reprezentuje pojedynczy pomiar i składa się z czterech wartości zapisanych w jednym wierszu pliku: nr pomiaru, nr czujnika, data i czas, oraz zmierzona temperatura, które rozdzielone są znakiem spacji.
 
 W funkcji `main` pobierz od użytkownika nazwę pliku z danymi, otwórz ten plik w trybie do odczytu, a następnie wczytaj zawartość pliku do **listy dynamicznej jednokierunkowej**. Po zakończeniu czytania zamknij plik. Przyjmij, że dane w pliku są zawsze poprawne, tj. wiersz zawsze zawiera czwórkę prawidłowych napisów w tej samej kolejności.
@@ -67,6 +72,7 @@ Po zakończeniu zapisywania zamknij pliki, usuń elementy z list i zakończ dzia
 Pobierz plik tekstowy z danymi wejściowymi i umieść go we właściwym katalogu. Do obsługi plików wykorzystaj funkcje `fopen`, `fclose`, `fprintf`, `fscanf` i `feof` (lub odpowiadających im wersji bezpiecznych). Wszystkie z biblioteki: `stdio.h`.
 
 LAB07
+
 Przeprowadzono pomiary temperatury w terenie za pomocą czterech czujników temperatury w okresie od 10 lutego do 12 marca. Pomiary były wykonywane przez każdy z czujników co około 5 min. Mierzone wartości zostały zapisane w pliku ( [[do pobrania]](https://ktrojanowski.blog.uksw.edu.pl/files/edu/temp-na-zewn.txt "temp-na-zewn.txt") – _aby zapisać plik na dysk lokalny użyj prawego przycisku myszki i wybierz opcję „Zapisz element docelowy jako..” lub „zapisz link jako..”_). Plik zawiera listę rekordów, gdzie rekord to kolekcja kilku dowolnych wartości, każda ściśle określonego typu, występujących w ustalonej, zawsze tej samej kolejności. Każdy rekord w pliku reprezentuje pojedynczy pomiar i składa się z czterech wartości zapisanych w jednym wierszu pliku: nr pomiaru, nr czujnika, data i czas, oraz zmierzona temperatura, które rozdzielone są znakiem spacji.
 
 W funkcji `main` pobierz od użytkownika nazwę pliku z danymi, otwórz ten plik w trybie do odczytu, a następnie wczytaj zawartość pliku do **listy dynamicznej dwukierunkowej**. Po zakończeniu czytania zamknij plik. Przyjmij, że dane w pliku są zawsze poprawne, tj. wiersz zawsze zawiera czwórkę prawidłowych napisów w tej samej kolejności.
@@ -95,6 +101,7 @@ Po zakończeniu zapisywania zamknij pliki, usuń elementy z list i zakończ dzia
 Pobierz plik tekstowy z danymi wejściowymi i umieść go we właściwym katalogu. Do obsługi plików wykorzystaj funkcje `fopen`, `fclose`, `fprintf`, `fscanf` i `feof` (lub odpowiadających im wersji bezpiecznych). Wszystkie z biblioteki: `stdio.h`.
 
 LAB08
+
 Napisz program, który pobiera od użytkownika jego nick oraz niewielką liczbę naturalną. Umieść w kodzie asercję, która sprawdza czy liczba jest rzeczywiście naturalna. Następnie program przystępuje do testu zręczności użytkownika: losuje literę występującą na klawiaturze (nie losuje cyfr, znaków interpunkcyjnych, matematycznych i pozostałych „symboli”) i wypisuje ją w oknie konsoli, po czym oczekuje na naciśnięcie przez użytkownika klawisza odpowiadającego wypisanej literze. Wtedy natychmiast losuje następną literę, wypisuje w oknie konsoli i ponownie czeka na reakcję użytkownika. Jeżeli użytkownik się pomylił, również natychmiast losuje i wypisuje kolejną literę. Program wykonuje test tyle razy, ile wynosiła pobrana liczba naturalna.
 
 Po zakończeniu testu wyświetlany jest czas trwania testu (liczony od wypisania pierwszej litery aż do ostatniej odpowiedzi użytkownika) i liczba trafnych odpowiedzi. Do pomiaru czasu użyj funkcji `time` i `difftime`. Dodatkowo zostaje otwarty plik txt o nazwie takiej jak podany nick, tj. „_nick_.txt” i do niego w kolejnym wierszu są dopisywane uzyskane wyniki (czas i liczba trafień). Jeżeli takiego pliku jeszcze nie ma, program wypisuje w oknie konsoli komunikat o tym, że taki plik jest właśnie zakładany. W komunikacie podana jest pełna ścieżka do folderu, w którym plik zostanie utworzony wraz z jego nazwą. _Hint: pełną ścieżkę do bieżącego folderu można pobrać z_ `argv[0]`.
@@ -107,6 +114,7 @@ Uwagi:
 2.  Do sprawdzania błędów związanych z dostępem do pliku „log.txt” wykorzystaj stałą `errno`, a do generowania komunikatów – funkcje `strerror` i `perror`. Wszelkie komunikaty o sytuacjach błędnych, jakie wystąpiły w trakcie pracy programu związane np. z dostępem do plików, wysyłaj do standardowego strumienia dla komunikatów o błędach `stderr`.
 
 LAB09
+
 Zaprojektuj klasę, reprezentującą figurę na płaszczyźnie: trapez równoramienny.
 
 Zaproponuj zestaw pól dla tej klasy, pozwalający na jednoznaczne określenie jej położenia na płaszczyźnie względem początku układu współrzędnych oraz jednoznacznie określający jej rozmiary (np. długości boków, podstawy, itd.). Dla uproszczenia przyjmij, że trapez jest zawsze rysowany w określonej pozycji, np. podstawą równolegle do osi X. Projektując zestaw pól postaraj się zminimalizować ich liczbę, dobierając je tak, aby pozostałe brakujące wartości dało się wyznaczyć. _Np. gdyby to dotyczyło kwadratu, to do określenia położenia wystarczą współrzędne jednego z wierzchołków, np. lewy-dolny, a do określenia rozmiarów – długość jednego boku. Za pomocą tych wartości jesteśmy już w stanie łatwo wyznaczyć w kwadracie współrzędne wszystkich pozostałych wierzchołków oraz długości pozostałych boków._
@@ -131,6 +139,7 @@ Napisz program, który w funkcji `main` deklaruje obiekt typu `trapez`, po cz
 6.  a na koniec jeszcze raz wywołuje metodę wypisującą wszystkie pola i współrzędne w oknie konsoli, aby sprawdzić, czy figura wróciła na swoje miejsce.
 
 LAB10
+
 Do klasy `MojaKlasa` ([https://ktrojanowski.blog.uksw.edu.pl/programowanie-obiektowe/kody-programow-po/](https://ktrojanowski.blog.uksw.edu.pl/programowanie-obiektowe/kody-programow-po/): Program #6) dodaj pole `nast`, tak aby można było tworzyć listę dynamiczną jednokierunkową obiektów typu `MojaKlasa`.
 
 Następnie zaprojektuj nową klasę `Wykladowca`, która zawiera pole typu `MojaKlasa*` wskazujące na listę dynamiczną jednokierunkową. Pole to ma pełnić rolę głowy dynamicznej listy grup studenckich przypisanych do danego wykładowcy. Klasa `Wykladowca` może też zawierać inne pola, jeżeli okażą się potrzebne.
@@ -152,6 +161,7 @@ Zademonstruj działanie napisanego kodu: w funkcji `main` utwórz obiekty dyna
 Przygotuj odpowiedź na pytanie prowadzącego: _ile razy w napisanym programie zostały wywołane konstruktory, które i w których miejscach kodu to nastąpiło. A ile razy zostały wywołane destruktory?_
 
 LAB11
+
 Zaprojektuj i zaimplementuj trzy klasy, które na zajęciach 11 posłużą jako klasy bazowe. Klasy reprezentują pojęcia:
 
 1.  **samochód** – zawiera pola przechowujące cechy wspólne dla wszystkich samochodów (cena, rodzaj silnika).
@@ -167,12 +177,15 @@ Dodatkowo każda klasa bazowa powinna mieć jeszcze pole `nast`, zadeklarowane 
 Zademonstruj poprawność działania zaprojektowanych klas, pisząc w funkcji `main` kod, budujący dla każdego z typów danych listę dynamiczną jednokierunkową zawierającą 5 elementów. Do tworzenia elementów listy użyj konstruktorów domyślnych. Po utworzeniu każdej z list wywołaj metodę `wypisz` na rzecz każdego z elementów listy. Na koniec usuń wszystkie listy.
 
 LAB12
+
 Do klasy bazowej wybranej do realizacji na lab. 11 (reprezentującej samochód albo urządzenie optyczne albo osobę na uczelni) dodaj przeciążony operator `+=` jako metodę należącą do klasy. Zaproponuj własną logikę sumowania obiektów (np. gdyby to było sumowanie kwadratów, to wynikiem sumowania może być kwadrat, którego pole jest sumą pól składników sumy, albo którego bok ma długość równą sumie długości boków składników sumy). Korzystając z kodu wejściówki na lab. 11 utwórz listę dynamiczną zawierającą 5 elementów typu klasy bazowej, po czym zsumuj je korzystając z napisanego operatora. Na koniec wywołaj metodę `wypisz` na rzecz obiektu przechowującego wartość sumy.
 
 LAB13
+
 Do klasy bazowej wybranej do realizacji na lab. 11 dodaj przynajmniej dwie metody czysto wirtualne. Następnie w dwóch klasach dziedziczących po tej klasie bazowej zaimplementuj odpowiednie wersje tych dwóch metod. W funkcji `main` utwórz jedną listę dynamiczną składającą się z obiektów obydwu typów klas dziedziczących (możesz wykorzystać kod rozwiązania zadania z lab. 11). Na przykładzie tej listy zademonstruj polimorfizm metod deklarowanych w bazowej jako czysto wirtualne (np. posługując się wskaźnikiem do typu bazowego wywołaj dla wszystkich obiektów w liście te czysto wirtualne metody, demonstrując w ten sposób ich różne działanie w zależności od typu obiektu).
 
 LAB14
+
 Napisz klasę reprezentującą kontener typu **zbiór z powtórzeniami**. Jest to struktura danych, w której nowe dane dopisywane są zawsze, nawet jeżeli wielokrotnie dodawana jest ta sama wartość, a porządek danych nie jest ustalony i może być dowolny. Kontener przechowuje obiekty typu `string` (dodaj w nagłówku pliku instrukcję `#include <string>`).
 
 Do przechowywania danych w kontenerze wykorzystaj dowolną, najkorzystniejszą twoim zdaniem strukturę danych (np. dynamicznie zaalokowana tablica, albo lista dynamiczna..). Zobacz, jak został zaimplementowany kontener typu Tablica na slajdach 266-268 wykładu 12 oraz pełny kod tej klasy na stronie www (w sekcji: Program #11):  
